@@ -20,6 +20,7 @@ production stylesheet in assets/built/screen.css
 9.  Error Template
 10. Subscribe Overlay
 11. Site Footer
+12. Extra (formerly used in code injection)
 
 */
 
@@ -760,11 +761,10 @@ Usage (In Ghost editor):
     overflow-x: auto;
     margin: 1.5em 0 3em;
     padding: 20px;
-    border: color(var(--darkgrey) l(-10%)) 1px solid;
-    color: var(--whitegrey);
+    border: #E3EDF3 1px solid;
     font-size: 1.4rem;
     line-height: 1.5em;
-    background: color(var(--darkgrey) l(-3%));
+    background: #F7FAFB;
     border-radius: 5px;
 }
 
@@ -1799,62 +1799,166 @@ Usage (In Ghost editor):
 /* 11. Site Footer
 /* ---------------------------------------------------------- */
 
-.site-footer {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 60px;
+
+.footer {
+    background-color: #000;
+    padding: 64px 16px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
 }
 
-.site-footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    color: rgba(255,255,255,0.7);
-    font-size: 1.3rem;
+.footer__inner {
+    max-width: 1040px;
 }
 
-.site-footer-content a {
-    color: rgba(255,255,255,0.7);;
+@media (min-width: 800px) {
+    .footer__inner {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+.footer__logo {
+    height: 32px;
+    width: auto;
+}
+
+.footer__title {
+    font-weight: 600;
+    letter-spacing: .5px;
+    display: block;
+    margin-top: 32px;
+}
+
+@media (min-width: 800px) {
+    .footer__title {
+        margin: 0;
+    }
+}
+
+.footer__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__list li {
+    margin-bottom: 8px;
+    margin-left: 0;
+    padding: 0;
+}
+
+.footer__list a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #000;
+    transition: border-bottom .2s ease;
+}
+
+.footer__list a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.footer__legal {
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin-top: 32px;
+    padding-top: 16px;
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer__legal-list {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__legal-list li {
+    float: left;
+    margin-right: 32px;
+}
+
+.footer__legal-list a {
+    color: #fff;
+}
+
+
+/* 12. Extra
+/* ---------------------------------------------------------- */
+
+/* This is carried over from the code that was injected into the casper theme from the V1 blog */
+
+.post-summary {
+    background-color: #f4f4f4;
+    border-left: .8rem solid rgb(255, 205, 2);
+    margin: 3rem 0;
+    padding: 1rem 2rem;
+}
+
+.post-summary ol {
+    font-weight: 300;
+    margin: 0 0 2rem;
+    padding: 0 1.65rem;
+}
+
+.post-summary li {
+    /* font-size: 1.35rem; */
+    /* line-height: 1.75; */
+}
+
+.post .assets-link img {
+    margin: 0 1rem 0 .5rem;
+}
+
+a.assets-link {
+    /* border: 0.5rem solid rgb(255,205,2,); */
+    background: rgb(255, 205, 2);
+    box-sizing: border-box;
+    color: #111;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    line-height: 1.5;
+    margin-right: .5rem;
+    padding: .4rem 0 .4rem 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.assets-link img {
+    margin: 0 1rem 0 0.5rem;
+    padding: 0;
+}
+
+a.assets-link:hover {
+    background: rgb(12, 153, 213);
+    border-color: rgb(12, 153, 213);
+    color: #fff;
+}
+
+.assets-link:active {
+    background: rgb(0, 81, 137);
+    border-color: rgb(0, 81, 137);
+    color: #fff;
     text-decoration: none;
 }
 
-.site-footer-nav {
-    display: flex;
+.left {
+    float: left;
 }
 
-.site-footer-nav a {
-    position: relative;
-    margin-left: 20px;
+.table {
+    display: table;
+    width: 100%;
 }
 
-.site-footer-nav a:before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 100%;
-}
-
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
-
-@media (max-width: 650px) {
-    .site-footer-content {
-        flex-direction: column;
-    }
-    .site-footer-nav a:first-child {
-        margin-left: 0;
-    }
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
 }
