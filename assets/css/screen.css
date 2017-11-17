@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css
 
 */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab:400,400i,600');
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
@@ -107,43 +108,12 @@ gul
 
 .site-header {
     position: relative;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     color: #000;
     background-color: #fff;
-    /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
-    /* background-size: cover; */
+    box-shadow: 0px 1px 2px #0000001a;
 }
-
-/* .site-header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: #fff;
-}
-
-.site-header:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    z-index: 10;
-    display: block;
-    height: 80px;
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
-}
-
-.site-header.no-cover:before,
-.site-header.no-cover:after {
-    display: none;
-} */
 
 .site-header-content {
     display: flex;
@@ -198,11 +168,12 @@ gul
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .site-nav__logo {
-    height: 60px;
+    height: 40px;
 }
 
 .site-nav-left {
@@ -258,7 +229,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
 }
 
 .nav li a {
@@ -448,10 +418,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     justify-content: space-between;
 }
 
-.post-card-excerpt {
-    font-family: Georgia, serif;
-}
-
 .post-card-meta {
     padding: 0 25px 25px;
 }
@@ -550,30 +516,62 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 /* ^ Required to make .post-full-content:before/after z-index stacking work */
 
+
 .post-full-header {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
-    text-align: center;
+    padding: 70px 100px 0;
 }
-@media (max-width: 500px) {
+
+
+@media (max-width: 1170px) {
     .post-full-header {
-        padding: 14vw 3vw 10vw;
+        padding: 5vw 7vw 0;
     }
 }
 
+@media (max-width: 500px) {
+    .post-full-header {
+        padding: 14vw 0 10vw;
+    }
+}
+
+
+
 .post-full-meta {
     display: flex;
-    justify-content: center;
     align-items: center;
     color: var(--midgrey);
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
+    margin-top: 1.5rem;
+}
+
+.post-primary-tag {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.post-meta-author a {
+    color: #929292;
+}
+
+.post-meta-author-image {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: #929292;
 }
 
 .post-full-title {
@@ -587,25 +585,9 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-image {
-    height: 800px;
-    margin: 0 -10vw -165px;
-    background: var(--lightgrey) center center;
-    background-size: cover;
+    width: 100%;
     border-radius: 5px;
-}
-
-@media (max-width: 1170px) {
-    .post-full-image {
-        height: 600px;
-        margin: 0 -4vw -100px;
-        border-radius: 0;
-    }
-}
-
-@media (max-width: 800px) {
-    .post-full-image {
-        height: 400px;
-    }
+    margin-top: 20px;
 }
 
 .post-full-content {
@@ -613,8 +595,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     min-height: 230px;
     margin: 0 auto;
     padding: 70px 100px 0;
-    font-family: Georgia, serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     line-height: 1.6em;
     background: #fff;
 }
@@ -628,34 +609,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .post-full-content {
         font-size: 1.9rem;
     }
-}
-
-.post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
@@ -851,7 +804,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
 }
 
 .post-full-content h1 {
@@ -961,10 +914,6 @@ Usage (In Ghost editor):
     }
     .post-full-title {
         font-size: 2.9rem;
-    }
-    .post-full-image {
-        height: 350px;
-        margin-bottom: 4vw;
     }
     .post-full-content {
         padding: 0;

@@ -130,7 +130,7 @@ img {
 }
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -429,11 +429,12 @@ h6 {
     line-height: 1.15;
     font-weight: 700;
     text-rendering: optimizeLegibility;
+    font-family: 'Zilla Slab', sans-serif, 
 }
 
 h1 {
     margin: 0 0 0.5em 0;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
 }
 @media (max-width: 500px) {
