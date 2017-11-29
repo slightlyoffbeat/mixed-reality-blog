@@ -853,20 +853,22 @@ Usage (In Ghost editor):
 
 .post-full-content h5 {
     display: block;
-    margin: 0.5em 0;
-    padding: 1em 0 1.5em;
+    /* margin: 0.5em 0; */
+    /* padding: 1em 0 1.5em; */
     border: 0;
-    color: var(--blue);
-    font-family: Georgia,serif;
+    /* color: var(--blue); */
+    /* font-family: Georgia,serif; */
     font-size: 3.2rem;
     line-height: 1.35em;
-    text-align: center;
+    /* text-align: center; */
 }
+
+
 @media (min-width: 1180px) {
-    .post-full-content h5 {
+    /* .post-full-content h5 {
         width: 100vw;
         max-width: 1060px;
-    }
+    } */
 }
 @media (max-width: 500px) {
     .post-full-content h5 {
