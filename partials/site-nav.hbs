@@ -1,8 +1,14 @@
 <nav class="site-nav">
-    <div class="site-nav-left">
-        <a href="{{@blog.url}}"><img class="site-nav__logo" src="{{asset "img/logo.svg"}}" /></a>
-    </div>
-    <div class="site-nav-right">
-         {{#if @blog.navigation}} {{navigation}} {{/if}}
-    </div>
+  <div class="site-nav-left">
+    <a href="{{@blog.url}}">
+      {{#if logoImage}}
+      <img class="site-nav__logo" src="{{asset logoImage}}" />
+      {{else}}
+      <img class="site-nav__logo" src="{{asset "img/mrb-logo.svg"}}" />
+      {{/if}}
+    </a>
+  </div>
+  <div class="site-nav-right">
+    {{#if @blog.navigation}} {{navigation}} {{/if}}
+  </div>
 </nav>
